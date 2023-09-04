@@ -40,7 +40,7 @@
 		<dependency>
 			<groupId>com.github.f4b6a3</groupId>
 			<artifactId>tsid-creator</artifactId>
-			<version>5.0.2</version>
+			<version>5.2.0</version>
 		</dependency>
 		<dependency>
 			<groupId>com.github.f4b6a3</groupId>
@@ -67,6 +67,6 @@
 				<version>3.3.2</version>
 			</plugin>
 		</plugins>
-		<finalName>rest</finalName>
+		<finalName>api</finalName>
 	</build>
 </project>
