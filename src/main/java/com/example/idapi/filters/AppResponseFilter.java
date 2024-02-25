@@ -1,4 +1,4 @@
-package com.github.f4b6a3.idapi.filters;
+package com.example.idapi.filters;
 
 import java.io.IOException;
 import java.util.logging.Logger;

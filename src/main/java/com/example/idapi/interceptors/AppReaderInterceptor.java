@@ -1,4 +1,4 @@
-package com.github.f4b6a3.idapi.interceptors;
+package com.example.idapi.interceptors;
 
 import java.io.IOException;
 

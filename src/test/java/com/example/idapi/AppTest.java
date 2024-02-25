@@ -1,4 +1,4 @@
-package com.github.f4b6a3.idapi;
+package com.example.idapi;
 
 import junit.framework.Test;
 import junit.framework.TestCase;

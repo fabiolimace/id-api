@@ -1,4 +1,4 @@
-package com.github.f4b6a3.idapi.resources;
+package com.example.idapi.resources;
 
 import java.util.List;
 
