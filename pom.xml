@@ -1,12 +1,12 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-	<groupId>com.github.f4b6a3</groupId>
-	<artifactId>id-rest-api</artifactId>
+	<groupId>com.example</groupId>
+	<artifactId>id-api</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>war</packaging>
-	<name>id-rest-api</name>
-	<url>https://github.com/fabiolimace/id-rest-api</url>
-	<description>ID REST API</description>
+	<name>id-api</name>
+	<url>https://github.com/fabiolimace/id-api</url>
+	<description>ID API</description>
 	<licenses>
 		<license>
 			<name>MIT License</name>
@@ -67,6 +67,6 @@
 				<version>3.3.2</version>
 			</plugin>
 		</plugins>
-		<finalName>api</finalName>
+		<finalName>id-api</finalName>
 	</build>
 </project>
