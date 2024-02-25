@@ -19,7 +19,7 @@ public abstract class BaseResource {
 
 	static final int getLimitFromEnvironment() {
 
-		final int limit = 10;
+		final int limit = 1000;
 
 		final String key = "ID_API_LIMIT";
 		String value = System.getenv(key);
