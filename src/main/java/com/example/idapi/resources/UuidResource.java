@@ -18,14 +18,14 @@ public class UuidResource extends BaseResource {
 
 	@GET
 	@Path("v1")
-	@Produces({ MediaType.APPLICATION_JSON })
+	@Produces({ MediaType.APPLICATION_JSON, MediaType.TEXT_PLAIN })
 	public Response v1(@QueryParam("limit") Integer limit, @HeaderParam("Accept") String accept) {
 		return response(UuidCreator::getTimeBased, limit, accept);
 	}
 
 	@GET
 	@Path("v3")
-	@Produces({ MediaType.APPLICATION_JSON })
+	@Produces({ MediaType.APPLICATION_JSON, MediaType.TEXT_PLAIN })
 	public Response v3(@QueryParam("namespace") String namespace, @QueryParam("name") String name,
 			@HeaderParam("Accept") String accept) {
 		return response(() -> UuidCreator.getNameBasedMd5(namespace(namespace), name), 1, accept);
@@ -33,14 +33,14 @@ public class UuidResource extends BaseResource {
 
 	@GET
 	@Path("v4")
-	@Produces({ MediaType.APPLICATION_JSON })
+	@Produces({ MediaType.APPLICATION_JSON, MediaType.TEXT_PLAIN })
 	public Response v4(@QueryParam("limit") Integer limit, @HeaderParam("Accept") String accept) {
 		return response(UuidCreator::getRandomBased, limit, accept);
 	}
 
 	@GET
 	@Path("v5")
-	@Produces({ MediaType.APPLICATION_JSON })
+	@Produces({ MediaType.APPLICATION_JSON, MediaType.TEXT_PLAIN })
 	public Response v5(@QueryParam("namespace") String namespace, @QueryParam("name") String name,
 			@HeaderParam("Accept") String accept) {
 		return response(() -> UuidCreator.getNameBasedSha1(namespace(namespace), name), 1, accept);
@@ -48,14 +48,14 @@ public class UuidResource extends BaseResource {
 
 	@GET
 	@Path("v6")
-	@Produces({ MediaType.APPLICATION_JSON })
+	@Produces({ MediaType.APPLICATION_JSON, MediaType.TEXT_PLAIN })
 	public Response v6(@QueryParam("limit") Integer limit, @HeaderParam("Accept") String accept) {
 		return response(UuidCreator::getTimeOrdered, limit, accept);
 	}
 
 	@GET
 	@Path("v7")
-	@Produces({ MediaType.APPLICATION_JSON })
+	@Produces({ MediaType.APPLICATION_JSON, MediaType.TEXT_PLAIN })
 	public Response v7(@QueryParam("limit") Integer limit, @HeaderParam("Accept") String accept) {
 		return response(UuidCreator::getTimeOrderedEpoch, limit, accept);
 	}

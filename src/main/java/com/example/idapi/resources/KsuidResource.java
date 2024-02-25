@@ -14,21 +14,21 @@ import jakarta.ws.rs.core.Response;
 public class KsuidResource extends BaseResource {
 
 	@GET
-	@Produces({ MediaType.APPLICATION_JSON })
+	@Produces({ MediaType.APPLICATION_JSON, MediaType.TEXT_PLAIN })
 	public Response ksuid(@QueryParam("limit") Integer limit, @HeaderParam("Accept") String accept) {
 		return response(KsuidCreator::getKsuid, limit, accept);
 	}
 
 	@GET
 	@Path("monotonic")
-	@Produces({ MediaType.APPLICATION_JSON })
+	@Produces({ MediaType.APPLICATION_JSON, MediaType.TEXT_PLAIN })
 	public Response monotonic(@QueryParam("limit") Integer limit, @HeaderParam("Accept") String accept) {
 		return response(KsuidCreator::getMonotonicKsuid, limit, accept);
 	}
 
 	@GET
 	@Path("subsecond") // precise on JDK 17+
-	@Produces({ MediaType.APPLICATION_JSON })
+	@Produces({ MediaType.APPLICATION_JSON, MediaType.TEXT_PLAIN })
 	public Response subsecond(@QueryParam("limit") Integer limit, @HeaderParam("Accept") String accept) {
 		return response(KsuidCreator::getSubsecondKsuid, limit, accept);
 	}

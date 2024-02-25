@@ -14,14 +14,14 @@ import jakarta.ws.rs.core.Response;
 public class UlidResource extends BaseResource {
 
 	@GET
-	@Produces({ MediaType.APPLICATION_JSON })
+	@Produces({ MediaType.APPLICATION_JSON, MediaType.TEXT_PLAIN })
 	public Response ksuid(@QueryParam("limit") Integer limit, @HeaderParam("Accept") String accept) {
 		return response(UlidCreator::getUlid, limit, accept);
 	}
 
 	@GET
 	@Path("monotonic")
-	@Produces({ MediaType.APPLICATION_JSON })
+	@Produces({ MediaType.APPLICATION_JSON, MediaType.TEXT_PLAIN })
 	public Response monotonic(@QueryParam("limit") Integer limit, @HeaderParam("Accept") String accept) {
 		return response(UlidCreator::getMonotonicUlid, limit, accept);
 	}

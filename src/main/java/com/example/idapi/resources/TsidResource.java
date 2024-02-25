@@ -14,21 +14,21 @@ import jakarta.ws.rs.core.Response;
 public class TsidResource extends BaseResource {
 
 	@GET
-	@Produces({ MediaType.APPLICATION_JSON })
+	@Produces({ MediaType.APPLICATION_JSON, MediaType.TEXT_PLAIN })
 	public Response tsid(@QueryParam("limit") Integer limit, @HeaderParam("Accept") String accept) {
 		return response(TsidCreator::getTsid, limit, accept);
 	}
 
 	@GET
 	@Path("int64")
-	@Produces({ MediaType.APPLICATION_JSON })
+	@Produces({ MediaType.APPLICATION_JSON, MediaType.TEXT_PLAIN })
 	public Response int64(@QueryParam("limit") Integer limit, @HeaderParam("Accept") String accept) {
 		return response(() -> TsidCreator.getTsid().toLong(), limit, accept);
 	}
 
 	@GET
 	@Path("uint64")
-	@Produces({ MediaType.APPLICATION_JSON })
+	@Produces({ MediaType.APPLICATION_JSON, MediaType.TEXT_PLAIN })
 	public Response uint64(@QueryParam("limit") Integer limit, @HeaderParam("Accept") String accept) {
 		return response(() -> Long.toUnsignedString(TsidCreator.getTsid().toLong()), limit, accept);
 	}
