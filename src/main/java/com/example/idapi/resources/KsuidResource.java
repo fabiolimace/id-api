@@ -15,21 +15,21 @@ public class KsuidResource extends BaseResource {
 
 	@GET
 	@Produces({ MediaType.APPLICATION_JSON, MediaType.TEXT_PLAIN })
-	public Response ksuid(@QueryParam("limit") Integer limit, @HeaderParam("Accept") String accept) {
-		return response(KsuidCreator::getKsuid, limit, accept);
+	public Response ksuid(@QueryParam("n") Integer n, @HeaderParam("Accept") String accept) {
+		return response(KsuidCreator::getKsuid, n, accept);
 	}
 
 	@GET
 	@Path("monotonic")
 	@Produces({ MediaType.APPLICATION_JSON, MediaType.TEXT_PLAIN })
-	public Response monotonic(@QueryParam("limit") Integer limit, @HeaderParam("Accept") String accept) {
-		return response(KsuidCreator::getMonotonicKsuid, limit, accept);
+	public Response monotonic(@QueryParam("n") Integer n, @HeaderParam("Accept") String accept) {
+		return response(KsuidCreator::getMonotonicKsuid, n, accept);
 	}
 
 	@GET
 	@Path("subsecond") // precise on JDK 17+
 	@Produces({ MediaType.APPLICATION_JSON, MediaType.TEXT_PLAIN })
-	public Response subsecond(@QueryParam("limit") Integer limit, @HeaderParam("Accept") String accept) {
-		return response(KsuidCreator::getSubsecondKsuid, limit, accept);
+	public Response subsecond(@QueryParam("n") Integer n, @HeaderParam("Accept") String accept) {
+		return response(KsuidCreator::getSubsecondKsuid, n, accept);
 	}
 }

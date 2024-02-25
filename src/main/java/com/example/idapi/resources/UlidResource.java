@@ -15,14 +15,14 @@ public class UlidResource extends BaseResource {
 
 	@GET
 	@Produces({ MediaType.APPLICATION_JSON, MediaType.TEXT_PLAIN })
-	public Response ksuid(@QueryParam("limit") Integer limit, @HeaderParam("Accept") String accept) {
-		return response(UlidCreator::getUlid, limit, accept);
+	public Response ksuid(@QueryParam("n") Integer n, @HeaderParam("Accept") String accept) {
+		return response(UlidCreator::getUlid, n, accept);
 	}
 
 	@GET
 	@Path("monotonic")
 	@Produces({ MediaType.APPLICATION_JSON, MediaType.TEXT_PLAIN })
-	public Response monotonic(@QueryParam("limit") Integer limit, @HeaderParam("Accept") String accept) {
-		return response(UlidCreator::getMonotonicUlid, limit, accept);
+	public Response monotonic(@QueryParam("n") Integer n, @HeaderParam("Accept") String accept) {
+		return response(UlidCreator::getMonotonicUlid, n, accept);
 	}
 }

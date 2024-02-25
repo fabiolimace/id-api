@@ -16,14 +16,14 @@ public abstract class BaseResource {
 
 	static final int LIMIT = 1000;
 
-	static Response response(Supplier<Object> supplier, Integer limit, String accept) {
+	static Response response(Supplier<Object> supplier, Integer n, String accept) {
 		try {
 
 			Object entity = null;
 			MediaType type = null;
 			List<String> list = new ArrayList<>();
 
-			int max = Math.min(Objects.requireNonNullElse(limit, 1), LIMIT);
+			int max = Math.min(Objects.requireNonNullElse(n, 1), LIMIT);
 			IntStream.range(0, max).forEach(x -> list.add(supplier.get().toString()));
 
 			// always use JSON unless the user requests TEXT

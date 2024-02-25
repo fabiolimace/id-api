@@ -19,8 +19,8 @@ public class UuidResource extends BaseResource {
 	@GET
 	@Path("v1")
 	@Produces({ MediaType.APPLICATION_JSON, MediaType.TEXT_PLAIN })
-	public Response v1(@QueryParam("limit") Integer limit, @HeaderParam("Accept") String accept) {
-		return response(UuidCreator::getTimeBased, limit, accept);
+	public Response v1(@QueryParam("n") Integer n, @HeaderParam("Accept") String accept) {
+		return response(UuidCreator::getTimeBased, n, accept);
 	}
 
 	@GET
@@ -34,8 +34,8 @@ public class UuidResource extends BaseResource {
 	@GET
 	@Path("v4")
 	@Produces({ MediaType.APPLICATION_JSON, MediaType.TEXT_PLAIN })
-	public Response v4(@QueryParam("limit") Integer limit, @HeaderParam("Accept") String accept) {
-		return response(UuidCreator::getRandomBased, limit, accept);
+	public Response v4(@QueryParam("n") Integer n, @HeaderParam("Accept") String accept) {
+		return response(UuidCreator::getRandomBased, n, accept);
 	}
 
 	@GET
@@ -49,15 +49,15 @@ public class UuidResource extends BaseResource {
 	@GET
 	@Path("v6")
 	@Produces({ MediaType.APPLICATION_JSON, MediaType.TEXT_PLAIN })
-	public Response v6(@QueryParam("limit") Integer limit, @HeaderParam("Accept") String accept) {
-		return response(UuidCreator::getTimeOrdered, limit, accept);
+	public Response v6(@QueryParam("n") Integer n, @HeaderParam("Accept") String accept) {
+		return response(UuidCreator::getTimeOrdered, n, accept);
 	}
 
 	@GET
 	@Path("v7")
 	@Produces({ MediaType.APPLICATION_JSON, MediaType.TEXT_PLAIN })
-	public Response v7(@QueryParam("limit") Integer limit, @HeaderParam("Accept") String accept) {
-		return response(UuidCreator::getTimeOrderedEpoch, limit, accept);
+	public Response v7(@QueryParam("n") Integer n, @HeaderParam("Accept") String accept) {
+		return response(UuidCreator::getTimeOrderedEpoch, n, accept);
 	}
 
 	static String namespace(String namespace) {
