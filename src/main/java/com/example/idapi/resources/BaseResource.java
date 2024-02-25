@@ -14,7 +14,18 @@ import jakarta.ws.rs.core.Response;
 
 public abstract class BaseResource {
 
-	static final int LIMIT = 1000;
+	// Maximum number of IDs per request
+	static final int LIMIT = getLimitFromEnvironment();
+
+	static final int getLimitFromEnvironment() {
+
+		final int limit = 10;
+
+		final String key = "ID_API_LIMIT";
+		String value = System.getenv(key);
+
+		return value != null ? Integer.parseInt(value) : limit;
+	}
 
 	static Response response(Supplier<Object> supplier, Integer n, String accept) {
 		try {
